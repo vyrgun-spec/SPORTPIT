@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VITAL — спортивне харчування</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grain"></div>
+    <header class="header">
+      <a class="logo" href="#top">VITAL</a>
+      <nav class="nav">
+        <a href="#catalog">Каталог</a>
+        <a href="#why">Чому ми</a>
+        <a href="#delivery">Доставка</a>
+      </nav>
+      <a class="header-cta" href="#catalog">Обрати добавки</a>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Київ · доставка по Україні</p>
+          <h1>Чисті добавки.<br />Сильний результат.</h1>
+          <p class="lead">
+            Протеїн, креатин, вітаміни та передтренувальні комплекси з
+            прозорим складом. Оберіть кількість і оформіть замовлення за хвилину.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#catalog">Дивитися каталог</a>
+            <a class="btn btn-ghost" href="#why">Як це працює</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img
+            src="https://images.unsplash.com/photo-1579758629938-03607ccdbaba?auto=format&fit=crop&w=1200&q=80"
+            alt="Спортивне харчування та тренування"
+          />
+          <div class="hero-badge">
+            <strong>Lab tested</strong>
+            <span>Партійний контроль якості</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats">
+        <div><b>48 год</b><span>відправка по Україні</span></div>
+        <div><b>0₴</b><span>доставка від 1500₴</span></div>
+        <div><b>12</b><span>позицій у наявності</span></div>
+        <div><b>30 днів</b><span>гарантія повернення</span></div>
+      </section>
+
+      <section id="catalog" class="catalog">
+        <div class="section-head">
+          <h2>Каталог</h2>
+          <p>Ціни в гривнях. Кількість можна змінити кнопками +/−.</p>
+        </div>
+        <div class="filters" id="filters"></div>
+        <div class="grid" id="grid"></div>
+      </section>
+
+      <section id="why" class="why">
+        <h2>Просто. Чесно. Зручно.</h2>
+        <div class="why-grid">
+          <article>
+            <span>01</span>
+            <h3>Обираєте кількість</h3>
+            <p>На картці товару кнопки +/−. Сума оновлюється одразу.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Заповнюєте дані</h3>
+            <p>ПІБ, телефон і пошта — менеджер підтвердить замовлення.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Отримуєте посилку</h3>
+            <p>Нова Пошта або кур’єр. Оплата при отриманні.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="delivery" class="delivery">
+        <div>
+          <h2>Доставка та оплата</h2>
+          <p>
+            Працюємо по всій Україні. Замовлення до 16:00 відправляємо того ж
+            дня. Безкоштовна доставка від 1500₴.
+          </p>
+        </div>
+        <ul>
+          <li>Нова Пошта — 1–2 дні</li>
+          <li>Оплата при отриманні</li>
+          <li>Повернення протягом 14 днів</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>VITAL © 2026</span>
+      <span>Спортивне харчування · Україна</span>
+    </footer>
+
+    <div class="overlay" id="overlay">
+      <div class="modal" role="dialog" aria-labelledby="checkout-title">
+        <button class="close" id="closeCheckout" aria-label="Закрити">×</button>
+        <div class="checkout">
+          <div class="checkout-product">
+            <img id="checkoutImage" alt="" />
+            <div>
+              <p class="eyebrow" id="checkoutCategory"></p>
+              <h3 id="checkoutName"></h3>
+              <p class="checkout-weight" id="checkoutWeight"></p>
+              <div class="qty qty-lg">
+                <button type="button" data-checkout-delta="-1">−</button>
+                <span id="checkoutQty">1</span>
+                <button type="button" data-checkout-delta="1">+</button>
+              </div>
+              <p class="checkout-total">
+                Разом: <strong id="checkoutTotal"></strong>
+              </p>
+            </div>
+          </div>
+
+          <form id="orderForm">
+            <h2 id="checkout-title">Оформлення замовлення</h2>
+            <label>
+              ПІБ
+              <input name="name" type="text" placeholder="Іван Петренко" required />
+            </label>
+            <label>
+              Номер телефону
+              <input
+                name="phone"
+                type="tel"
+                placeholder="+380 67 123 45 67"
+                required
+              />
+            </label>
+            <label>
+              Пошта
+              <input
+                name="email"
+                type="email"
+                placeholder="you@email.com"
+                required
+              />
+            </label>
+            <button class="btn btn-primary btn-full" type="submit">
+              Підтвердити замовлення
+            </button>
+            <p class="form-hint">Ми зателефонуємо, щоб підтвердити наявність.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="overlay" id="success">
+      <div class="modal modal-success">
+        <h2>Замовлення прийнято</h2>
+        <p id="successText"></p>
+        <button class="btn btn-primary" id="closeSuccess">На каталог</button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
